@@ -1,0 +1,56 @@
+#name: "lili" # 冒号必须是英文格式，每个冒号后必须跟空格
+#Name: "shishi"#大小写敏感
+
+#对象
+#data: {"name":"lili","pwd":"12343"}
+
+#相同层级元素 左对齐
+#data1:
+#  name: "lili"
+#  pwd: "12345"
+
+#data2:
+#  - "lili"
+#  - "nana"
+#
+#data3: ["123":"456"]
+
+#data4:
+#  - name: "lili"
+#  - pwd: "1233"
+
+#纯量
+#name: lili
+#bool1: true
+#bool2: false
+
+#int1: 12
+#float1: 12.0000
+#空类型
+
+#data: ~
+#data1: null
+#data2: Null
+#data3:
+
+#python不支持
+#data4: None
+#data5: none
+
+#日期类型
+#
+#data: 2020-11-11 12:12:12
+#
+#data2: 2020-11-11
+#data3: 12:12:12  #如果需要时分秒 尽量义字符串的形式编写
+#data4: 2020-06-02 02:02:02
+#data5: 2020-05-19
+
+#锚点：一定要有子节点
+info: &data  #标记锚点相当于复制name和phon的节点内容
+  name: "lili"
+  phon: "1222222222"
+
+addr:
+  <<: *data   #引用锚点，使用data锚点的值
+  dar: "航都路18号"
